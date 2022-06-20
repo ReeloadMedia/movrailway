@@ -12,36 +12,36 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ['API_ID'])
-API_HASH = environ['API_HASH']
-BOT_TOKEN = environ['BOT_TOKEN']
+API_ID = int("9171778")
+API_HASH = "545b7c429eb1a7939b57c9733946c870"
+BOT_TOKEN = "2084115459:AAGmxpIZdFOlzCsQZNpHYm-rqt3WUzXuDZo"
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
-USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://telegra.ph/file/7e56d907542396289fee4.jpg https://telegra.ph/file/9aa8dd372f4739fe02d85.jpg https://telegra.ph/file/adffc5ce502f5578e2806.jpg https://telegra.ph/file/6937b60bc2617597b92fd.jpg https://telegra.ph/file/09a7abaab340143f9c7e7.jpg https://telegra.ph/file/5a82c4a59bd04d415af1c.jpg https://telegra.ph/file/323986d3bd9c4c1b3cb26.jpg https://telegra.ph/file/b8a82dcb89fb296f92ca0.jpg https://telegra.ph/file/31adab039a85ed88e22b0.jpg https://telegra.ph/file/c0e0f4c3ed53ac8438f34.jpg https://telegra.ph/file/eede835fb3c37e07c9cee.jpg https://telegra.ph/file/e17d2d068f71a9867d554.jpg https://telegra.ph/file/8fb1ae7d995e8735a7c25.jpg https://telegra.ph/file/8fed19586b4aa019ec215.jpg https://telegra.ph/file/8e6c923abd6139083e1de.jpg https://telegra.ph/file/0049d801d29e83d68b001.jpg')).split()
+USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
+PICS = (environ.get('PICS', 'https://i.postimg.cc/7ZHYL33k/1111683.jpg https://i.postimg.cc/hjdKYpB9/1111684.jpg https://i.postimg.cc/Hk6W8rz7/1111688.jpg https://i.postimg.cc/KjhmhBGC/1111689.jpg https://i.postimg.cc/bvGPG3dK/1111690.jpg https://i.postimg.cc/CMbFHPJ0/1111695.jpg https://i.postimg.cc/7LcxXjpH/1111696.jpg https://i.postimg.cc/VkZ1L3sq/1111700.jpg https://i.postimg.cc/zvw8zv3v/1111703.jpg https://i.postimg.cc/mggB4b4Z/1111707.jpg https://i.postimg.cc/SNrkHnwt/1111711.jpg https://i.postimg.cc/s2tr57h1/1111737.jpg https://i.postimg.cc/DZV9Sh9X/1111824.jpg https://i.postimg.cc/63nNcqrc/1111826.jpg https://i.postimg.cc/kgH3dKww/Cabelos-femininos-2021-2022-Luiza-Gomes.png https://i.postimg.cc/Dy2KQ28Q/Cover-Story-Emilia-Clarke-s-Solo-Flight.jpg https://i.postimg.cc/mkSWxn6F/Cover-Story-Emilia-Clarke-s-Solo-Flight-1.jpg https://i.postimg.cc/65wBHr1v/emma-mackey-lovebot-on-Instagram-Emma-photographed-by-Coste-Billy-emmamackey.jpg https://i.postimg.cc/x18D7tGc/imgur-com.jpg https://i.postimg.cc/MHwJFwtS/Nathalie-Emmanuel.jpg https://i.postimg.cc/h48B7JPP/Not-The-American.jpg https://i.postimg.cc/YSmc20s7/This-Stranger-Things-Star-Looks-So-Different-Now.jpg https://i.postimg.cc/GhqnqZyW/Stranger-Things-Star-Natalia-Dyer-s-Hair-Looks-Nothing-Like-Nancy-Wheeler-s-Now.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1257860541').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001505948321').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
+auth_channel = "-1001705351443"
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Rajappan")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://rm:rm@cluster0.bwdl5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "rm")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001511176717'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'ReeloadMedia')
-P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
+P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
-SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "False")), False)
+SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", None)
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query: {query}</b> \n‌‌‌‌IMDb Data:\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10")
